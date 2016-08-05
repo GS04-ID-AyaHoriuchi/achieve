@@ -1,0 +1,29 @@
+<div class="container">
+ <div class="col-lg-6 col-lg-offset-3 col-sm-10 col-sm-offset-1">
+  <h2>お問い合わせフォーム</h2>
+  <%= form_for(@contact, url: confirm_contacts_path) do |f| %>
+  <ul>
+   <% @contact.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+   <% end %>
+  </ul>
+  <br>
+  <div>
+  <%= f.label :お名前 %>
+  <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+  <%= f.label :メールアドレス %>
+  <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+  <%= f.label :お問い合わせ内容 %>
+  <%= f.text_field :content, class: 'form-control' %>
+  </div>
+  <br>
+  <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+  <% end %>
+ </div>
+</div>
